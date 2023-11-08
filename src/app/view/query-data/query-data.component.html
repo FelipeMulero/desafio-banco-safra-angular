@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="logo">
+    <img src="../../assets/banco-safra.png" alt="Logo Banco Safra">
+    <h2>Consulta de dados</h2>
+  </div>
+  <form class="login-form">
+    <div class="form-group">
+      <label for="id">ID do usuário</label>
+      <input type="text" [(ngModel)]="id" placeholder="Digite o ID do usuário" name="id">
+    </div>
+    <button type="button" (click)="onSubmit()">Consultar</button>
+  </form>
+
+  <div class="table-container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>E-mail</th>
+          <th>Gênero</th>
+          <th>Idade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of data">
+          <td>{{ user.id }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.gender }}</td>
+          <td>{{ user.age }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

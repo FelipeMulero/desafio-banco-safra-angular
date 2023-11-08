@@ -1,1 +1,21 @@
-node_modules
+# Arquivos gerados automaticamente
+node_modules/
+dist/
+*.tsbuildinfo
+*.js.map
+*.bundle.js
+
+# Arquivos temporários
+*.tmp/
+*.log
+*.lock
+
+# Arquivos de configuração
+.editorconfig
+.gitignore
+.gitattributes
+
+# Arquivos de depuração
+.vscode/
+/.angular/cache/
+

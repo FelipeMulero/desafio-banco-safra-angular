@@ -12,7 +12,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  login(username: string, password: string): Observable<User> {
+  login(): Observable<User> {
     return this.http.post<User>(`${this.apiUrl}/login`, { });
   }
 
@@ -25,7 +25,7 @@ export class ApiService {
   }
 
   integrarDados(): Observable<any> {
-    return this.http.post(`${this.apiUrl}/integrar-dados/`, {});
+    return this.http.post(`${this.apiUrl}/integrate-data/`, {});
   }
 
   updateUser(id: string, user: any): Observable<any> {
@@ -39,14 +39,16 @@ export class ApiService {
   static users = [
     {
       id: '1',
-      name: 'TESTE',
+      name: 'Teste-Safra',
+      password: 'teste@123',
       email: 'fulano@example.com',
       gender: 'masculino',
       age: 30
     },
     {
       id: '2',
-      name: 'Beltrano da Silva',
+      name: 'Teste-Safra2',
+      password: 'teste@1234',
       email: 'beltrano@example.com',
       gender: 'feminino',
       age: 25

@@ -6,17 +6,18 @@ import { SharedDataService } from 'src/app/service/shared.service';
 
 @Component({
   selector: 'app-call-api',
-  templateUrl: './call-api.component.html',
-  styleUrls: ['./call-api.component.scss']
+  templateUrl: './call-data.component.html',
+  styleUrls: ['./call-data.component.scss']
 })
 export class CallApiComponent implements OnInit {
-  user: any = { id: '', name: '', email: '' };
+  user: any = { id: '', name: '', email: '', age: 0, gender: '' };
 
   message: string = '';
   form?: FormGroup;
 
   username!: string;
   password!: string;
+  users: any[] = [];
 
   data: any = [];
 
@@ -25,13 +26,9 @@ export class CallApiComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router) {}
 
-    users: any[] = [];
-
-
     ngOnInit() {
       this.sharedDataService.getData().subscribe(data => {
         this.data = data;
-        console.log('deu certo-------------------', this.data)
       });
 
       this.apiService.getUsers().subscribe(
@@ -55,6 +52,19 @@ export class CallApiComponent implements OnInit {
           }
         );
       }
+
+      const dadosIntegrados = localStorage.getItem("dadosIntegrados");
+
+      if (dadosIntegrados) {
+        const dados = JSON.parse(dadosIntegrados);
+
+        this.user.name = dados.name;
+        this.user.email = dados.email;
+        this.user.age = dados.age;
+        this.user.gender = dados.gender;
+
+        this.users = dados.users;
+      }
     }
 
     editUser(id: string) {
@@ -72,14 +82,7 @@ export class CallApiComponent implements OnInit {
       );
     }
 
-    saveUser() {
-      this.apiService.updateUser(this.user.id, this.user).subscribe(
-        () => {
-          this.router.navigate(['/user-list']);
-        },
-        (error) => {
-          console.error('Erro ao salvar usuário:', error);
-        }
-      );
+    returnUser() {
+      this.router.navigate(['/query-data']);
     }
   }

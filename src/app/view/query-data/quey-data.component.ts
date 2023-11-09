@@ -13,6 +13,8 @@ export class QueryDataComponent implements OnInit {
   id!: string;
   data: any = {};
 
+  dataStorage: any;
+
   constructor(private apiService: ApiService,
     private sharedDataService: SharedDataService,
     private router: Router) {}
@@ -21,8 +23,13 @@ export class QueryDataComponent implements OnInit {
 
   onSubmit() {
     this.apiService.getUserById(this.id).subscribe(response => {
-      console.log('submit', response);
       this.data = response;
+      console.error('local storage', this.data)
+      if(this.data > [0]) {
+        this.dataStorage = this.data;
+        console.log('local storage', this.dataStorage)
+      }
+
     });
   }
 
@@ -30,11 +37,13 @@ export class QueryDataComponent implements OnInit {
     this.apiService.integrarDados().subscribe(response => {
       this.sharedDataService.sendData(response);
       alert('Dados integrados com sucesso!');
+      localStorage.setItem("dadosIntegrados", JSON.stringify(this.dataStorage[0]));
       this.router.navigate(['/call-data']);
 
     }, error => {
       alert('Erro ao integrar dados com o banco local.');
     });
+
   }
 
 }

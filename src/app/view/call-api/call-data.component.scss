@@ -1,12 +1,12 @@
 .container {
-  max-width: 400px;
+  max-width: 500px;
   text-align: center;
   background-color:rgb(11, 0, 63);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   margin: auto;
-  margin-top: 50px;
+  margin-top: 40px;
 }
 
 .logo img {
@@ -60,4 +60,16 @@ button {
 
 button:hover {
   background-color: #0056b3;
+}
+
+.container button {
+  margin: 5px;
+}
+
+.container button:first-child {
+  background-color: green;
+}
+
+.container button:last-child {
+  background-color: red;
 }

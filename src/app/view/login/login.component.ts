@@ -17,15 +17,9 @@ export class LoginComponent implements OnInit {
   ngOnInit() {}
 
   onSubmit() {
-    console.log('antes', this.name)
-    this.apiService.login(this.name, this.password).subscribe(
+    this.apiService.login().subscribe(
       (response) => {
-        console.log('resposta:', this.name);
-
-        console.log('ApiService.users.some(user => user.name === this.username)', ApiService.users.some(user => user.name === this.name), ApiService.users)
-
         if (ApiService.users.some(user => user.name == this.name)) {
-          console.log('entrei')
           this.router.navigate(['/query-data']);
           localStorage.setItem('token', JSON.stringify(response));
         }

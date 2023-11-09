@@ -12,17 +12,18 @@
     <label for="email">E-mail:</label>
     <input type="text" [(ngModel)]="user.email" name="email">
   </div>
-  <button (click)="saveUser()">Salvar</button>
 
-  <div class="message-container">
-    <p>{{ message }}</p>
+  <div>
+    <label for="gender">Genero:</label>
+    <input type="text" [(ngModel)]="user.gender" name="gender">
+  </div>
+  <div>
+    <label for="age">Idade:</label>
+    <input type="text" [(ngModel)]="user.age" name="age">
   </div>
 
-  <div class="list-container">
-    <div *ngFor="let user of users">
-      <p>{{ user.name }} - {{ user.email }}</p>
-      <button (click)="editUser(user.id)">Editar</button>
-      <button (click)="deleteUser(user.id)">Excluir</button>
-    </div>
-  </div>
+  <button (click)="returnUser()">Voltar</button>
+  <button (click)="editUser(user.id)">Editar</button>
+  <button (click)="deleteUser(user.id)">Excluir</button>
+
 </div>

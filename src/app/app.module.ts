@@ -6,7 +6,7 @@ import { LoginComponent } from './view/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { CallApiComponent } from './view/call-api/call-api.component';
+import { CallApiComponent } from './view/call-api/call-data.component';
 import { QueryDataComponent } from './view/query-data/quey-data.component';
 
 @NgModule({

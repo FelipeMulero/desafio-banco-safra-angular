@@ -3,27 +3,26 @@
     <img src="../../assets/banco-safra.png" alt="Logo Banco Safra">
     <h2>Chamada da API</h2>
   </div>
-  <form class="login-form">
-    <div class="form-group">
-      <label for="username">Usuário</label>
-      <input type="text" [(ngModel)]="username" placeholder="Digite o usuário" name="username">
-    </div>
-    <div class="form-group">
-      <label for="password">Senha</label>
-      <input type="password" [(ngModel)]="password" placeholder="Digite a senha" name="password">
-    </div>
-    <button type="button" (click)="onSubmit()">Enviar</button>
-  </form>
+
+  <div>
+    <label for="name">Nome:</label>
+    <input type="text" [(ngModel)]="user.name" name="name">
+  </div>
+  <div>
+    <label for="email">E-mail:</label>
+    <input type="text" [(ngModel)]="user.email" name="email">
+  </div>
+  <button (click)="saveUser()">Salvar</button>
 
   <div class="message-container">
     <p>{{ message }}</p>
   </div>
 
   <div class="list-container">
-    <ul *ngIf="data">
-      <li *ngFor="let user of data">
-        {{ user.name }} - {{ user.email }}
-      </li>
-    </ul>
+    <div *ngFor="let user of users">
+      <p>{{ user.name }} - {{ user.email }}</p>
+      <button (click)="editUser(user.id)">Editar</button>
+      <button (click)="deleteUser(user.id)">Excluir</button>
+    </div>
   </div>
 </div>

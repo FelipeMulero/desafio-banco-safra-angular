@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { User } from '../models/user.models';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +12,8 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  login(username: string, password: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/login`, { username, password });
+  login(username: string, password: string): Observable<User> {
+    return this.http.post<User>(`${this.apiUrl}/login`, { });
   }
 
   getUsers(): Observable<any> {
@@ -20,7 +21,11 @@ export class ApiService {
   }
 
   getUserById(id: string): Observable<any> {
-    return this.http.get(`${this.apiUrl}/users/${id}`);
+    return this.http.get(`${this.apiUrl}/query-data/${id}`);
+  }
+
+  integrarDados(): Observable<any> {
+    return this.http.post(`${this.apiUrl}/integrar-dados`, {});
   }
 
   updateUser(id: string, user: any): Observable<any> {
@@ -34,7 +39,7 @@ export class ApiService {
   static users = [
     {
       id: '1',
-      name: 'Fulano de Tal',
+      name: 'TESTE',
       email: 'fulano@example.com',
       gender: 'masculino',
       age: 30

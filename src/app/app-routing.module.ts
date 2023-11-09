@@ -7,8 +7,8 @@ import { CallApiComponent } from './view/call-api/call-api.component';
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'query-api', component: QueryDataComponent },
-  { path: 'call-api', component: CallApiComponent },
+  { path: 'query-data', component: QueryDataComponent },
+  { path: 'call-data', component: CallApiComponent },
 ];
 
 @NgModule({

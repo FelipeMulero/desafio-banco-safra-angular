@@ -9,35 +9,31 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  username!: string;
+  name!: string;
   password!: string;
 
-  constructor(private apiService: ApiService,
-    private router: Router) {}
+  constructor(private apiService: ApiService, private router: Router) {}
 
   ngOnInit() {}
 
   onSubmit() {
-    const response = this.apiService.login(this.username, this.password);
+    console.log('antes', this.name)
+    this.apiService.login(this.name, this.password).subscribe(
+      (response) => {
+        console.log('resposta:', this.name);
 
-    if (!response) {
-      alert('Erro ao autenticar usuário');
-      return;
-    }
+        console.log('ApiService.users.some(user => user.name === this.username)', ApiService.users.some(user => user.name === this.name), ApiService.users)
 
-    console.log('submit', response);
-    if (response) {
-      if (ApiService.users.some(user => user.id === '1')) {
-        this.router.navigate(['/query-data']);
-      } else {
-        alert('Usuário ou senha inválidos');
+        if (ApiService.users.some(user => user.name == this.name)) {
+          console.log('entrei')
+          this.router.navigate(['/query-data']);
+          localStorage.setItem('token', JSON.stringify(response));
+        }
+      },
+      (error) => {
+        console.error('Erro:', error);
+        alert('Erro ao autenticar usuário');
       }
-    } else {
-      alert('Usuário ou senha inválidos');
-    }
-
-    localStorage.setItem('token', JSON.stringify(response));
-
-    return response;
+    );
   }
 }

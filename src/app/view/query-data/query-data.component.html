@@ -5,8 +5,9 @@
   </div>
   <form class="login-form">
     <div class="form-group">
-      <label for="id">ID do usuário</label>
-      <input type="text" [(ngModel)]="id" placeholder="Digite o ID do usuário" name="id">
+      <label for="id">Digite a Idade</label>
+      <span>*Pesquise varias vezes que a busca é aleatória</span>
+      <input type="text" [(ngModel)]="id" placeholder="Digite a idade do usuário" name="id">
     </div>
     <button type="button" (click)="onSubmit()">Consultar</button>
   </form>
@@ -33,4 +34,5 @@
       </tbody>
     </table>
   </div>
+  <button *ngIf="data.length > 0" (click)="integrar()">Integrar com Banco Local</button>
 </div>

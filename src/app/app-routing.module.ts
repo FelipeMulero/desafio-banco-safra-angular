@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './view/login/login.component';
 import { QueryDataComponent } from './view/query-data/quey-data.component';
-import { CallApiComponent } from './view/call-api/call-data.component';
+import { CallApiComponent } from './view/call-data/call-data.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },

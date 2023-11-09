@@ -9,7 +9,7 @@ import { SharedDataService } from 'src/app/service/shared.service';
   templateUrl: './call-data.component.html',
   styleUrls: ['./call-data.component.scss']
 })
-export class CallApiComponent implements OnInit {
+export class CallDataComponent implements OnInit {
   user: any = { id: '', name: '', email: '', age: 0, gender: '' };
 
   message: string = '';

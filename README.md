@@ -1,4 +1,4 @@
-Desafio Banco Safra Front-end
+# Desafio Banco Safra Front-end
 
 💻 Sobre o projeto:
 Foi desenvolvido 3 telas uma tela para fazer login, outra tela para consultas de usuários e integração do usuário em um banco local e outra tela para fazer edição e poder deletar esse usuário que foi integrado no banco local .
@@ -34,7 +34,7 @@ Também será possível:
 
 Adicionar um módulo de dashboad, Edição do perfil de usuário, Edição de conteúdos já criados.
 
-Informações para iniciar o projeto local:
+# Informações para iniciar o projeto local:
 #Opção de versão do node 18.14.0
 
 #Angular CLI 14.0.0.

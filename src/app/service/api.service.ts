@@ -25,7 +25,7 @@ export class ApiService {
   }
 
   integrarDados(): Observable<any> {
-    return this.http.post(`${this.apiUrl}/integrar-dados`, {});
+    return this.http.post(`${this.apiUrl}/integrar-dados/`, {});
   }
 
   updateUser(id: string, user: any): Observable<any> {

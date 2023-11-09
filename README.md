@@ -1,27 +1,69 @@
-# AngularApp
+Desafio Banco Safra Front-end
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.0.
+💻 Sobre o projeto:
+Foi desenvolvido 3 telas uma tela para fazer login, outra tela para consultas de usuários e integração do usuário em um banco local e outra tela para fazer edição e poder deletar esse usuário que foi integrado no banco local .
 
-## Development server
+No componente de Login o usuário acessa a tela atraves do campo usuário e senha, que estão no final do README para ter acesso ao sistema e testar as telas.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+A seguir o usuário entra no componente de Consultas que vem com os dados diretamente de um banco externo https://randomuser.me/
+e o usuário tem a opção de pesquisar um usuário pela "Idade" e logo após ser encontrado poderar fazer uma integração com o banco local.
 
-## Code scaffolding
+E ao seguir será direcionado para o componente de edição onde poderá editar ou excluir o usuário selecionado.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Projeto desenvolvido para o desafio nava - referente ao banco safra.
 
-## Build
+💡 Autor:
+Felipe Mulero
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Link útil
+Linkedin para mais informações: https://www.linkedin.com/in/felipe-mulero/
 
-## Running unit tests
+🛠️ Tecnologias utilizadas
+Frontend
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Angular, SCSS, TypeScript, Rxjs.
 
-## Running end-to-end tests
+📌 Funcionalidades
+Atualização de conteúdo em tempo real para o usuário. Usuário consegue visualizar os conteúdos que estão todos disponíveis na tela. Usuario consegue interagir com todos os conteúdos disponíveis na tela.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Futuras melhorias
 
-## Further help
+Os usuarios da plataforma irão conseguir visualizar: Criar novas funcionalidades, banco de cash exemplo Redis para algumas pesquisas e adicionar mais campos de buscas .
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Também será possível:
+
+Adicionar um módulo de dashboad, Edição do perfil de usuário, Edição de conteúdos já criados.
+
+Informações para iniciar o projeto local:
+#Opção de versão do node 18.14.0
+
+#Angular CLI 14.0.0.
+
+#npm install
+
+#npm start
+
+Porta de acesso http no front:
+http://localhost:4200/
+
+Porta de acesso no back-end:
+http://localhost:3000/
+
+# Porta de acesso no back-end Docker e informações para subir o contâiner:
+
+docker build -t nome_da_imagem .
+
+docker images
+
+docker run -p 3000:3000 banco-safra
+
+docker stop
+
+# Como fazer o teste
+
+Utilize o seguinte usuário e senha para acessar o projeto:
+
+username: Teste-Safra,
+password: teste@123.
+
+
